@@ -18,9 +18,8 @@
 <h1>Welcome To The Site!</h1>
 
 
-<%  int x = 5; %>
+<% int x = 5; %>
 <% System.out.println(x);%>
-
 
 
 <%
@@ -40,8 +39,6 @@
 
         }
     }
-
-
 
 
 %>

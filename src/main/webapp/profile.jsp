@@ -12,15 +12,10 @@
 </head>
 <body>
 
+<%@ include file="partials/navbar.jsp" %>
+
 <h1>Welcome to your Profile</h1>
 
 
-<%
-int x = 5;
-
-
-%>
-
-<%= x%>;
 </body>
 </html>
