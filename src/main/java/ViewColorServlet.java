@@ -14,7 +14,7 @@ public class ViewColorServlet extends HttpServlet {
 
         String color = req.getParameter("color");
         req.setAttribute("color", color);
-        req.getRequestDispatcher("view-color.jsp")
+        req.getRequestDispatcher("/view-color.jsp")
                 .forward(req, resp);
 
     }

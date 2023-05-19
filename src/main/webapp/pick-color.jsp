@@ -13,9 +13,11 @@
 <body>
 
 
-<form>
+<form action="/pickcolor" method="post">
     <label for="color">Enter a Color:</label><br>
     <input type="text" id="color" name="color"><br>
+    <button>Submit</button>
+
 
 </form>
 
