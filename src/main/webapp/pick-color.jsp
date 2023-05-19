@@ -15,7 +15,7 @@
 
 <form>
     <label for="color">Enter a Color:</label><br>
-    <input type="color" id="color" name="color"><br>
+    <input type="text" id="color" name="color"><br>
 
 </form>
 

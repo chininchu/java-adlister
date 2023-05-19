@@ -13,9 +13,5 @@
 <body style="background-color: ${param.color}">
 
 
-
-
-
-
 </body>
 </html>

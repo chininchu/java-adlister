@@ -12,7 +12,7 @@ public class PickColorPageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        req.getRequestDispatcher("/pickcolor.jsp").forward(req, resp);
+        req.getRequestDispatcher("/pick-color.jsp").forward(req, resp);
 
 
     }
@@ -20,9 +20,8 @@ public class PickColorPageServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
-        resp.sendRedirect("/viewcolor?color=" + req.getParameter("color"));
-
+        String usersColor = req.getParameter("color");
+        resp.sendRedirect("/viewcolor?color" + usersColor);
 
 
     }
