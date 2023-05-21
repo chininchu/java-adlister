@@ -13,6 +13,9 @@ public class Quote implements Serializable {
     private String content;
 
 
+    public Quote() {
+    }
+
     public Quote(long id, Author author, String content) {
         this.id = id;
         this.author = author;
@@ -43,4 +46,14 @@ public class Quote implements Serializable {
     public void setContent(String content) {
         this.content = content;
     }
-}
+
+
+
+
+    }
+
+
+
+
+
+
