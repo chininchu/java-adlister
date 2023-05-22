@@ -17,7 +17,7 @@ public class LoginServlet extends HttpServlet {
         boolean validAttempt = username.equals("admin") && password.equals("password");
 
         if (validAttempt) {
-            request.getSession().setAttribute("adminUser", true);
+            request.getSession().setAttribute("adminUser", username);
             response.sendRedirect("/profile");
 
 
@@ -34,16 +34,18 @@ public class LoginServlet extends HttpServlet {
 
             response.sendRedirect("/profile");
 
-
-        } else {
-            request.getRequestDispatcher("/login.jsp").forward(request, response);
+            return;
 
 
         }
+
+        request.getRequestDispatcher("/login.jsp").forward(request, response);
 
 
     }
 
 
 }
+
+
 
