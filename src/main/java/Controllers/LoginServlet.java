@@ -33,12 +33,13 @@ public class LoginServlet extends HttpServlet {
         if (request.getSession().getAttribute("adminUser") != null) {
 
             response.sendRedirect("/profile");
-            return;
+
+
+        } else {
+            request.getRequestDispatcher("/login.jsp").forward(request, response);
 
 
         }
-
-        request.getRequestDispatcher("/login.jsp").forward(request, response);
 
 
     }
