@@ -1,3 +1,5 @@
+package Dao;
+
 public class DaoFactory {
     private static Ads adsDao;
 
