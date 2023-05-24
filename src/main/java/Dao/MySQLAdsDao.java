@@ -41,7 +41,7 @@ public class MySQLAdsDao implements Ads {
             List<Ad> allAds = new ArrayList<>();
             while (rs.next()) {
 
-                allAds.add(new Ad(rs.getLong("id"), rs.getLong("user_id"), rs.getString("tittle"), rs.getString("description")));
+                allAds.add(new Ad(rs.getLong("id"), rs.getLong("user_id"), rs.getString("title"), rs.getString("description")));
 
             }
 
@@ -49,7 +49,7 @@ public class MySQLAdsDao implements Ads {
 
 
         } catch (Exception e) {
-            throw new RuntimeException("Error creating connection");
+            throw new RuntimeException("Unable to retrieve ads");
 
 
         }
