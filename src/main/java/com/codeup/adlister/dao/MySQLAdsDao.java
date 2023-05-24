@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLAdsDao implements Ads {
+
+
+    // Database Configuration
     private Connection connection = null;
 
     public MySQLAdsDao(Config config) {
@@ -28,10 +31,8 @@ public class MySQLAdsDao implements Ads {
         PreparedStatement stmt = null;
         try {
             String sql = "SELECT * FROM ads";
-//            String searchTermwithWildcards = "%" + searchTerm + "%";
 
             stmt = connection.prepareStatement(sql);
-//            stmt.setString(1, searchTermwithWildcards);
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
 
