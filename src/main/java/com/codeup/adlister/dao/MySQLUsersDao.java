@@ -31,7 +31,7 @@ public class MySQLUsersDao implements Users {
     @Override
     public User findByUsername(String username) {
 
-        try () {
+        try {
 
             String findUser = "SELECT * FROM users WHERE username = ? ";
 
@@ -82,7 +82,7 @@ public class MySQLUsersDao implements Users {
             ResultSet rs = stmt.getGeneratedKeys();
 
             rs.next();
-            return rs.getLong();
+            return rs.getLong(1);
 
 
         } catch (SQLException e) {
