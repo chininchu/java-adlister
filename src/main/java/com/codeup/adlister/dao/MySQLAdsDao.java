@@ -10,8 +10,12 @@ import java.util.List;
 public class MySQLAdsDao implements Ads {
 
 
-    // Database Configuration
+
     private Connection connection = null;
+
+
+    // Our MySQLAdsDao takes a parameter from our Config class and contains all the necessary objects that our needed to establish a connection (not to confuse the connection object) with our database.
+
 
     public MySQLAdsDao(Config config) {
         try {
@@ -25,6 +29,9 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error connecting to the database!", e);
         }
     }
+
+
+    // The all method holds our SQL statements which retrieves all the columns from our ads tables. This method has been declared in the Ads Interface
 
     @Override
     public List<Ad> all() {
@@ -41,10 +48,12 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    // The insert method accepts values for the Ad object from the user and adds them to our database
+
     @Override
     public Long insert(Ad ad) {
         try {
-//            String createInsertQuery = "INSERT INTO ads(user_id, title, description) VALUES (?,?,?)";
+
 
             PreparedStatement stmt = connection.prepareStatement(createInsertQuery(), Statement.RETURN_GENERATED_KEYS);
 
@@ -63,11 +72,15 @@ public class MySQLAdsDao implements Ads {
 
     }
 
+    // The createInsertQuery is a method used in conjunction to our insert method and essentially is used to separate code from our query.
+
     private String createInsertQuery() {
         return "INSERT INTO ads(user_id, title, description) VALUES (?,?,?)";
 
 
     }
+
+    // Our extractAd method is designed to display our add. The Result instance gets the data with respect to what is described within the Ad bean.
 
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
@@ -77,6 +90,8 @@ public class MySQLAdsDao implements Ads {
                 rs.getString("description")
         );
     }
+
+
 
     private List<Ad> createAdsFromResults(ResultSet rs) throws SQLException {
         List<Ad> ads = new ArrayList<>();
